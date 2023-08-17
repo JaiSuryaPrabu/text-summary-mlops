@@ -27,3 +27,18 @@ Implementation of basic nlp text summarization task in complete end to end ML pr
 | fastapi | Web framework for bulding API |
 | uvicorn | ASGI *(Asynchronous Server Gateway Interface)* web server for python |
 | jinja2 | Template engine |
+
+4. Writing code in `logging/__init__.py`
+5. Writing code in `utils/common.py` 
+6. Work on the `research/*.ipynb` files for training and saving the model
+7. Working on the **WORKFLOW**:
+    0. Upload the *dataset* in the public cloud like `github`
+    1. Update the `config/config.yaml`
+    2. Update the `params.yaml`
+    3. Update the `entity` and define the **dataclassess**
+    4. Update the `src/constants/`
+    5. Update the `src/config/configuration.py`
+    6. Update the `src/components`
+    7. Update the `src/pipeline`
+    8. Update the `main.py`
+    9. Update the `app.py`
