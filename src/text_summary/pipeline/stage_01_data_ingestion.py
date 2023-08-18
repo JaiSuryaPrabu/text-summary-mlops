@@ -4,6 +4,9 @@ from text_summary.components.data_ingestion import DataIngestion
 class DataIngestionTrainingPipeline:
 
     def __init__(self):
+        pass
+
+    def main(self):
         configManager = ConfigurationManager()
         data_ingestion_config = configManager.get_data_ingestion_config()
         data_ingestion = DataIngestion(config = data_ingestion_config)
