@@ -20,9 +20,9 @@ class DataIngestion:
             )
             # zip file is downloaded
             logger.info(f"File {filename} downloaded with the info : {headers}")
-        else:
+        if os.path.exists(self.config.local_data_file):
             # dataset is already downloaded
-            logger.info(f"File {filename} is already exist of size : {get_size(Path(self.config.local_data_file))}")
+            logger.info(f"File is already exist of size : {get_size(Path(self.config.local_data_file))}")
 
     def extract_data(self):
         # extracts the zip file

@@ -1,6 +1,6 @@
 from text_summary.constants import *
 from text_summary.utils.common import read_yaml,create_directories
-from text_summary.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig
+from text_summary.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig
 
 # CONGIF MANAGER
 class ConfigurationManager:
@@ -38,6 +38,7 @@ class ConfigurationManager:
 
         return data_validation_config
     
+    # STAGE 3
     def get_data_transformation_config(self) -> DataTransformationConfig:
         config = self.config.data_transformation
         create_directories([config.root_dir])
@@ -47,3 +48,27 @@ class ConfigurationManager:
             tokenizer_name=config.tokenizer_name
         )
         return data_transformation_config
+    
+    # STAGE 4
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        config = self.config.model_trainer
+        params = self.param.TrainingArguments
+
+        create_directories([config.root_dir])
+
+        model_trainer_config = ModelTrainerConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            model_ckpt=config.model_ckpt,
+            num_of_epochs=params.num_of_epochs,
+            warmup_steps=params.warmup_steps,
+            per_device_train_batch_size=params.per_device_train_batch_size,
+            weight_decay=params.weight_decay,
+            logging_steps=params.logging_steps,
+            evaluation_strategy=params.evaluation_strategy,
+            eval_steps=params.eval_steps,
+            save_steps=params.save_steps,
+            gradient_accumulation_steps=params.gradient_accumulation_steps
+        )
+
+        return model_trainer_config
