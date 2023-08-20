@@ -1,6 +1,6 @@
 from text_summary.constants import *
 from text_summary.utils.common import read_yaml,create_directories
-from text_summary.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig
+from text_summary.entity import DataIngestionConfig,DataValidationConfig,DataTransformationConfig,ModelTrainerConfig,ModelEvaluationConfig
 
 # CONGIF MANAGER
 class ConfigurationManager:
@@ -72,3 +72,16 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+    # STAGE 5
+    def get_model_eval_config(self) :
+        config = self.config.model_evaluation
+        create_directories([config.root_dir])
+        model_eval_config = ModelEvaluationConfig(
+            root_dir=config.root_dir,
+            data_path=config.data_path,
+            model_path=config.model_path,
+            tokenizer_path=config.tokenizer_path,
+            metric_file_name=config.metric_file_name
+        )
+        return model_eval_config

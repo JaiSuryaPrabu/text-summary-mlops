@@ -37,8 +37,8 @@ Implementation of basic nlp text summarization task in complete end to end ML pr
     2. Data Validation     🟢 
     3. Data Transformation 🟢
     4. Model Training      🟢
-    5. Model Evaluation    ⭕
-9. Working on the **WORKFLOW** for each stage:
+    5. Model Evaluation    🟢
+9. Working on the **TRAINING WORKFLOW** for each stage:
     1. Update the `config/config.yaml`
     2. Initialize the `params.yaml`
     3. Update the `entity` and define the **dataclassess**
@@ -47,10 +47,14 @@ Implementation of basic nlp text summarization task in complete end to end ML pr
     6. Update the `src/components`
     7. Update the `src/pipeline`
     8. Update the `main.py`
-    9. Update the `app.py`
 10. Before model training stage:
     1. Following pip commands must be executed : 
         1. `!pip install --upgrade accelerate`
         2. `!pip uninstall -y transformers accelerate`
         3. `!pip install transformers accelerate` 
     2. Update the `params.yaml` file
+11. Work on **PREDICTION PIPELINE** :
+    1. Update `src/config/configuration.py`
+    2. Create `src/components/model_prediction.py`
+    3. Create `src/pipeline/prediction.py`
+    4. Update the `app.py` 
