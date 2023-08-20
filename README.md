@@ -54,7 +54,5 @@ Implementation of basic nlp text summarization task in complete end to end ML pr
         3. `!pip install transformers accelerate` 
     2. Update the `params.yaml` file
 11. Work on **PREDICTION PIPELINE** :
-    1. Update `src/config/configuration.py`
-    2. Create `src/components/model_prediction.py`
-    3. Create `src/pipeline/prediction.py`
-    4. Update the `app.py` 
+    1. Create `src/pipeline/prediction.py`
+    2. Update the `app.py` 
