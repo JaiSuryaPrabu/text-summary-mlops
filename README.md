@@ -56,3 +56,6 @@ Implementation of basic nlp text summarization task in complete end to end ML pr
 11. Work on **PREDICTION PIPELINE** :
     1. Create `src/pipeline/prediction.py`
     2. Update the `app.py` 
+12. Work on **DEPLOYMENT PHASE**:
+    1. Update `Dockerfile`
+    2. Create `.github/workflows/main.yaml` for **CI/CD**
